@@ -2,7 +2,7 @@ import pygame
 import random
 import time
 import math
-#Jogo programado por mim, Porém eu não criei nem detenho direitos sobre a criação "Snake", este jogo foi criado apenas por diversão em questão de uma hora... por favor, não entendam errado
+#Jogo programado por mim, Porém eu não criei nem detenho direitos sobre a criação "Snake", este jogo foi criado apenas por diversão em questão de uma hora... por favor, não entendam errado eu apenas criei este programa para fins de melhorar as minhas abilidades
 #Jogo Originalmente criado por Dave Bresnin, da empresa Gremlin em 1982
 class Program:
     def __init__(self):
