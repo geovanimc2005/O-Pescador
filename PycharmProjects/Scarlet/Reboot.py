@@ -9,7 +9,11 @@ import json, pickle
 class Reboot:
     def __init__(self):
         self.acionado = False
+        self.nomes = ["Geovani", "Enzo", "Ana", "Miguel"]
+        self.senha = "Geovar"
+        self.ligado = False
         self.nome = "Otto"
+        self.dados_iniciais()
         self.input = input("Digite: ")
         self.contador = 0
         self.opções = ["Salvar", "Deletar", "Fechar"]
@@ -21,6 +25,22 @@ class Reboot:
         self.chances = 0
         self.respostas = ["Não sei", "Dificil dizer"]
         self.enigmas = {"Como Resolver o meu problema?":"Como Vou saber", "Que dia é Hoje?" : "Problemas"}
+        self.chances = 6
+        self.tentativas = 10
+    def criptografia(self, alfabeto="abcdefghjklmnopqrstwxyz"):
+        pass
+    def dados_iniciais(self):
+        input_0 =  input("Qual o Seu Nome? ")
+        for i in range(len(self.nomes)):
+            for j in self.senha:
+                if input_0 == self.nomes[i]:
+                    print(f"Bem Vindo {input_0} !")
+                    input_0 = input("Senha :")
+                    if input_0 == self.senha or j == input_0:
+                        print("Obrigado")
+                        self.ligado = True
+        if input_0 != "Geovani" and not self.ligado:
+            self.dados_iniciais()
     def fechar(self):
         return quit()
     def banco_de_dados(self):
@@ -60,7 +80,7 @@ class Reboot:
             print(f"{date.today()}, então está de parabéns")
         else:
             if date.today().weekday() == "Monday":
-                dados_de_tempo.join(date.day)
+                pass
     def temporizador(self):
         if self.contador == 0:
             for i in range(len(self.elementos)):
@@ -77,7 +97,7 @@ class Reboot:
         count = 0
         if self.temporizador():
             self.acionado = True
-        while self.acionado:
+        while self.acionado and self.ligado:
             self.horas(27)
             count += 1
             self.analisador(self.elementos)
